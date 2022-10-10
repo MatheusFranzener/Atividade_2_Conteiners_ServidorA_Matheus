@@ -9,7 +9,7 @@ app.use(route);
 route.use(express.json());
 
 route.get("/", (req,res) => {
-    res.send("Servidor rodando!");
+    res.send("Servidor A rodando!");
 });
 
 route.use("/api", routes);

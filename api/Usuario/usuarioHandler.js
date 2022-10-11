@@ -6,6 +6,7 @@ async function getUsuarios(){
 
 async function cadastrarUsuario(dados){
     listaUsuarios.push(dados);
+    return dados;
 }
 
 async function apagarDados(){
@@ -17,9 +18,9 @@ function verificarUsuarios(dados){
     let senha = dados.senha;
 
     if(listaUsuarios.length!=0){
-        for (let i = 0; i < listaUsuários.length; i++) {
-            if(idUsuario != null && listaUsuarios[i].idUsuario != 0 && listaUsuarios[i].idUsuario == idUsuario){
-                if(senha != null && listaUsuários[i].senha == senha){
+        for (let i = 0; i < listaUsuarios.length; i++) {
+            if(listaUsuarios[i].id == idUsuario){
+                if(listaUsuarios[i].senha == senha){
                     return true;
                 } else {
                     return false;
@@ -34,5 +35,6 @@ function verificarUsuarios(dados){
 module.exports = {
     getUsuarios,
     cadastrarUsuario,
-    apagarDados
+    apagarDados,
+    verificarUsuarios
 }
